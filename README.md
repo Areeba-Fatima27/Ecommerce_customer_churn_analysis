@@ -10,22 +10,18 @@ long-term loyalty. Companies can enhance customer engagement by understanding ch
 promotions to mitigate attrition.
 # PROJECT APPROACH 
 
-# Project Overview:
+Project Overview:
 This project aims to analyze customer data using PostgreSQL for data cleaning and transformation, followed by creating an insightful dashboard using Power BI with DAX for data visualization. Additionally, Word for creating a PDF report to document findings and insights.
 
-# Tools and Technologies:
+Tools and Technologies:
 
-# Step 1: Data Collection and Preparation
+Step 1: Data Collection and Preparation
 Objective: Import and structure data for analysis.
-
-# Step 2: Data Cleaning & Data Exploration in PostgreSQL
+Step 2: Data Cleaning & Data Exploration in PostgreSQL
 Objective: Clean and analyze the dataset to ensure consistency, remove errors, and handle missing values.
-
-# Step 3: Data Export for Visualization
+Step 3: Data Export for Visualization
 Objective: Export cleaned data from PostgreSQL to Power BI for visualization.
-
-# Step 4: Data Visualization in Power BI using DAX
+Step 4: Data Visualization in Power BI using DAX
 Objective: Create interactive dashboards to showcase insights derived from the cleaned data.
-
-# Step 5: Report Generation and Documentation in Word
+Step 5: Report Generation and Documentation in Word
 Objective: Summarize the insights, methodology, and recommendations in a formal report, and export the document as a PDF.
