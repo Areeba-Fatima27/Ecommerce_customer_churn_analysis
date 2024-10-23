@@ -1,6 +1,6 @@
-## Ecommerce_customer_churn_analysis
+# Ecommerce_customer_churn_analysis
 
-# INTRODUCTION
+## INTRODUCTION
 Customer churn occurs when customers stop engaging with a company, posing a significant challenge for 
 businesses as it affects retention and overall success. E-commerce companies, in particular, struggle to maintain 
 customer loyalty in a fast-paced environment. To combat this issue, it’s vital to identify at-risk customers and 
@@ -8,12 +8,12 @@ implement targeted retention strategies. This report analyzes a dataset from an 
 insights related to customer churn, guiding decision-making and enabling proactive steps to reduce attrition and build 
 long-term loyalty. Companies can enhance customer engagement by understanding churn factors and offering appealing 
 promotions to mitigate attrition.
-# PROJECT APPROACH 
+## PROJECT APPROACH 
 
-## Project Overview:
+### Project Overview:
 This project aims to analyze customer data using PostgreSQL for data cleaning and transformation, followed by creating an insightful dashboard using Power BI with DAX for data visualization. Additionally, Word for creating a PDF report to document findings and insights.
 
-## Tools and Technologies:
+### Tools and Technologies:
 
 #### Step 1: Data Collection and Preparation
 Objective: Import and structure data for analysis.
