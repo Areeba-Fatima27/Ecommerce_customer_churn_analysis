@@ -40,6 +40,14 @@ SELECT preferredlogindevice,
         CAST(SUM (churn) * 1.0 / COUNT(*) * 100 AS DECIMAL(10,2)) AS ChurnRate
 FROM ecommerce_data
 GROUP BY preferredlogindevice
+--/Churn rate for only churn customer/--
+SELECT preferredlogindevice, 
+COUNT(*) AS ChurnedCustomers,
+CAST(COUNT(*) * 1.0 / 948 * 100 AS DECIMAL(10,2)) AS ChurnRate
+FROM ecommerce_data
+WHERE churn = 1
+GROUP BY preferredlogindevice
+ORDER BY ChurnRate DESC
 
 --/4. What is the distribution of customers across different city tiers?/---
 SELECT citytier, 
@@ -49,6 +57,14 @@ SELECT citytier,
 FROM ecommerce_data
 GROUP BY citytier
 ORDER BY churnrate DESC
+--/ churn rate for only churn custumer/--
+SELECT  citytier, 
+COUNT(*) AS ChurnedCustomers,
+CAST(COUNT(*) * 1.0 / 948 * 100 AS DECIMAL(10,2)) AS ChurnRate
+FROM ecommerce_data
+WHERE churn = 1
+GROUP BY citytier
+ORDER BY ChurnRate DESC
 
 --/5.correlation between warehouse to home and churn rate./--
 ALTER TABLE ecommerce_data
@@ -91,6 +107,15 @@ CAST(SUM(churn) * 1.0 /COUNT(*) * 100.0 AS DECIMAL(10,2)) AS Churnrate
 FROM Ecommerce_data
 GROUP BY gender
 ORDER BY Churnrate DESC
+--/churn rate for churn custumer only/--
+SELECT  gender, 
+COUNT(*) AS ChurnedCustomers,
+CAST(COUNT(*) * 1.0 / 948 * 100 AS DECIMAL(10,2)) AS ChurnRate
+FROM ecommerce_data
+WHERE churn = 1
+GROUP BY gender
+ORDER BY ChurnRate DESC
+
 --/8. How does the average time spent on the app differ for churned and non-churned customers?/--
 SELECT Churn_status,ROUND(AVG(hourspendonapp),2) AS avg_hourspendonapp
 FROM ecommerce_data
@@ -112,6 +137,16 @@ SELECT preferredordercat,
 FROM ecommerce_data
 GROUP BY preferredordercat
 ORDER BY Churnrate DESC
+
+--/churn rate for churn custumer only/--
+SELECT preferredordercat, 
+COUNT(*) AS ChurnedCustomers,
+CAST(COUNT(*) * 1.0 / 948 * 100 AS DECIMAL(10,2)) AS ChurnRate
+FROM ecommerce_data
+WHERE churn = 1
+GROUP BY preferredordercat
+ORDER BY ChurnRate DESC
+
 --/ 11. Is there any relationship between customer satisfaction scores and churn?/--
 SELECT satisfactionscore,
        COUNT(*) AS TotalCustomer,
@@ -120,6 +155,7 @@ SELECT satisfactionscore,
 FROM ecommerce_data
 GROUP BY satisfactionscore
 ORDER BY Churnrate DESC
+
 --/12. Does the marital status of customers influence churn behavior?/--
 SELECT maritalstatus,
    COUNT(*) AS TotalCustomer,
